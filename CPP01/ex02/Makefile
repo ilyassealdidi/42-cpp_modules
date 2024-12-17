@@ -1,7 +1,7 @@
-SRCS = main.cpp Zombie.cpp zombieHorde.cpp
+SRCS = main.cpp
 OBJS = $(SRCS:.cpp=.o)
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = zombie
+NAME = main
 
 all: $(NAME)
 
