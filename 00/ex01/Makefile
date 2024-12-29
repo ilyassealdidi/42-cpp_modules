@@ -7,7 +7,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	c++ $(OBJS) -o $(NAME)
 
-%.o: %.cpp Phonebook.hpp Contact.hpp Utils.cpp
+%.o: %.cpp Phonebook.hpp Contact.hpp Utils.hpp
 	c++ -Wall -Wextra -Werror -std=c++98 -c $< -o $@
 
 clean:
