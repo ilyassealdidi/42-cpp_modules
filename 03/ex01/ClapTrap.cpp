@@ -6,7 +6,7 @@
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/29 12:52:27 by ialdidi           #+#    #+#             */
-/*   Updated: 2025/01/01 17:45:46 by ialdidi          ###   ########.fr       */
+/*   Updated: 2025/01/01 20:46:30 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,25 @@ ClapTrap::ClapTrap(std::string name) {
 	attackDamage = 0;
 }
 
-ClapTrap::~ClapTrap() {
-	std::cout << "ClapTrap destructor called" << std::endl;
+ClapTrap::ClapTrap(const ClapTrap &other){
+	std::cout << "ClapTrap "<< name << " Copy Constructor called" << std::endl;
+	*this = other; 
 }
 
-void ClapTrap::print_attrs()
-{
-	std::cout << hitPoints << std::endl;	
-	std::cout << energyPoints << std::endl;	
-	std::cout << attackDamage << std::endl;	
+ClapTrap& ClapTrap::operator=(const ClapTrap &other){
+	if (this != &other){
+		this->name = other.name;
+		this->hitPoints = other.hitPoints;
+		this->energyPoints = other.energyPoints;
+		this->attackDamage = other.attackDamage;
+	}
+	std::cout << "ClapTrap copy of " << other.name << " is live now." << std::endl;
+	return *this;
+}
 
+
+ClapTrap::~ClapTrap() {
+	std::cout << "ClapTrap destructor called" << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target) {

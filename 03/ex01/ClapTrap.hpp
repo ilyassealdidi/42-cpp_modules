@@ -6,7 +6,7 @@
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 22:30:57 by ialdidi           #+#    #+#             */
-/*   Updated: 2025/01/01 17:45:50 by ialdidi          ###   ########.fr       */
+/*   Updated: 2025/01/01 20:47:40 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,16 @@
 #include <iostream>
 
 class ClapTrap {
-	private:
+	protected:
 		std::string		name;
 		unsigned int	hitPoints;
 		unsigned int	energyPoints;
 		unsigned int	attackDamage;
 	public:
 		ClapTrap(std::string name);
-		// ClapTrap(const ClapTrap& obj);
+		ClapTrap(const ClapTrap& other);
 		~ClapTrap();
-		// ClapTrap& operator=(const ClapTrap& obj);
-		void print_attrs();
+		ClapTrap& operator=(const ClapTrap& other);
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);

@@ -1,14 +1,14 @@
-NAME	= megaphone
-SRCS	= megaphone.cpp
-OBJS	= $(SRCS:.cpp=.o)
-FLAGS	= -Wall -Wextra -Werror -std=c++98
+NAME = claptrap
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp
+OBJS = $(SRCS:.cpp=.o)
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	c++ $(FLAGS) $(OBJS) -o $(NAME)
 
-%.o: %.cpp 
+%.o: %.cpp ClapTrap.hpp
 	c++ $(FLAGS) -c $< -o $@
 
 clean:
