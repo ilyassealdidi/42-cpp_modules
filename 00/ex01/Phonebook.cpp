@@ -73,7 +73,7 @@ void PhoneBook::displayContacts() {
 		std::cout << std::setw(10) << contacts[i].getNickname(true) << std::endl;
 	}
 	Utils::writeNewLine();
-	while (1)
+	while (true)
 	{
 		Utils::write("Choose a contact : ");
 		std::string index;
@@ -81,7 +81,7 @@ void PhoneBook::displayContacts() {
 		if (std::cin.eof())
 			return ;
 		num = index[0] - '1';
-		if (index.length() != 1 || !isdigit(index[0])
+		if (index.length() != 1 || (isdigit(index[0]) == 0)
 			|| !(num >= 0 && num <= 7))
 		{
 			Utils::writeLine(RED "\t\tInvalid index" RESET);
