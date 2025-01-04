@@ -13,24 +13,24 @@
 #include "Contact.hpp"
 
 bool isAlpha(std::string str) {
-	for (int i = 0; str[i]; i++) {
-		if (!isalpha(str[i]))
+	for (int i = 0; str[i] != 0; i++) {
+		if (isalpha(str[i]) == 0)
 			return false;
 	}
 	return true;
 }
 
 bool isNumber(std::string str) {
-	for (int i = 0; str[i]; i++) {
-		if (!isdigit(str[i]))
+	for (int i = 0; str[i] != 0; i++) {
+		if (isdigit(str[i]) == 0)
 			return false;
 	}
 	return true;
 }
 
 bool isPrintable(std::string str) {
-	for (int i = 0; str[i]; i++) {
-		if (!isprint(str[i]))
+	for (int i = 0; str[i] != 0; i++) {
+		if (isprint(str[i]) == 0)
 			return false;
 	}
 	return true;
@@ -119,7 +119,7 @@ void Contact::setMember(std::string field, func Contact::*fn)
 {
 	std::string str;
 
-	while (1)
+	while (true)
 	{
 		Utils::write("\n\t\tEnter the " + field + ": ");
 		std::getline(std::cin , str);
