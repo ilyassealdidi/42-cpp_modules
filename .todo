@@ -16,7 +16,7 @@ CPP 02
 	ex02 => 
 	ex03 => 
 
-CPP 03
+CPP 03 => Unify constructor and destructor msgs
 	ex00 => OK
 	ex01 => OK
 	ex02 => OK

@@ -6,19 +6,15 @@
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 22:30:35 by ialdidi           #+#    #+#             */
-/*   Updated: 2025/01/05 21:08:45 by ialdidi          ###   ########.fr       */
+/*   Updated: 2025/01/01 20:59:38 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main()
 {
-	ClapTrap clapTrap("ilyasse");
-	
-	clapTrap.attack("ezahiri");
-	clapTrap.takeDamage(5);
-	clapTrap.beRepaired(5);
-
+	ScavTrap clapTrap("enemy");
+	clapTrap.attack("Zte9 ata9");
 	return 0;
 }

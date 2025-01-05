@@ -6,15 +6,16 @@
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 22:30:35 by ialdidi           #+#    #+#             */
-/*   Updated: 2025/01/01 20:59:38 by ialdidi          ###   ########.fr       */
+/*   Updated: 2025/01/05 21:12:54 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
-	ScavTrap clapTrap("enemy");
-	clapTrap.attack("Zte9 ata9");
+	FragTrap Frag("ilyasse");
+	Frag.attack("ezahiri");
+	Frag.highFivesGuys();
 	return 0;
 }

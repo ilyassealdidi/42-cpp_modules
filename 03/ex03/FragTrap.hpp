@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/28 22:30:35 by ialdidi           #+#    #+#             */
-/*   Updated: 2025/01/05 21:08:45 by ialdidi          ###   ########.fr       */
+/*   Created: 2025/01/04 19:50:04 by ialdidi           #+#    #+#             */
+/*   Updated: 2025/01/04 20:02:18 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
+
 #include "ClapTrap.hpp"
 
-int main()
-{
-	ClapTrap clapTrap("ilyasse");
-	
-	clapTrap.attack("ezahiri");
-	clapTrap.takeDamage(5);
-	clapTrap.beRepaired(5);
+class FragTrap : public ClapTrap {
+	public :
+		FragTrap(std::string name);
+		FragTrap(const FragTrap &other);
+		~FragTrap();
+		void highFivesGuys();
+};
 
-	return 0;
-}
+#endif

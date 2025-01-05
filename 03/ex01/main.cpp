@@ -6,7 +6,7 @@
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 22:30:35 by ialdidi           #+#    #+#             */
-/*   Updated: 2025/01/01 20:59:38 by ialdidi          ###   ########.fr       */
+/*   Updated: 2025/01/05 21:10:22 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main()
 {
-	ScavTrap clapTrap("enemy");
-	clapTrap.attack("Zte9 ata9");
+	ScavTrap scav("ilyasse");
+	scav.attack("ezahiri");
 	return 0;
 }
