@@ -6,7 +6,7 @@
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/29 12:52:27 by ialdidi           #+#    #+#             */
-/*   Updated: 2025/01/01 17:45:46 by ialdidi          ###   ########.fr       */
+/*   Updated: 2025/01/05 14:50:07 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,24 @@ ClapTrap::ClapTrap(std::string name) {
 	attackDamage = 0;
 }
 
-ClapTrap::~ClapTrap() {
-	std::cout << "ClapTrap destructor called" << std::endl;
+ClapTrap::ClapTrap(const ClapTrap &other){
+	std::cout << "ClapTrap "<< name << " Copy Constructor called" << std::endl;
+	*this = other; 
 }
 
-void ClapTrap::print_attrs()
-{
-	std::cout << hitPoints << std::endl;	
-	std::cout << energyPoints << std::endl;	
-	std::cout << attackDamage << std::endl;	
+ClapTrap& ClapTrap::operator=(const ClapTrap &other) {
+	std::cout << "ClapTrap " << name << " Copy Assignment Operator called" << std::endl;
+	if (this != &other) {
+		name = other.name;
+		hitPoints = other.hitPoints;
+		energyPoints = other.energyPoints;
+		attackDamage = other.attackDamage;
+	}
+	return *this;
+}
 
+ClapTrap::~ClapTrap() {
+	std::cout << "ClapTrap destructor called" << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target) {
@@ -64,15 +72,9 @@ void ClapTrap::beRepaired(unsigned int amount) {
 	else if (energyPoints == 0) {
 		std::cout << "ClapTrap " << name << " has no energy points" << std::endl;
 	}
-	else if (hitPoints == 10) {
-		std::cout << "ClapTrap " << name << " is already full life" << std::endl;
-	}
 	else {
-		if (hitPoints + amount > 10)
-			hitPoints = 10;
-		else
-			hitPoints += amount;
-		std::cout << "ClapTrap " << name << " is repaired by " << amount << std::endl;
+		hitPoints += amount;
 		energyPoints--;
+		std::cout << "ClapTrap " << name << " is repaired by " << amount << std::endl;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 22:30:57 by ialdidi           #+#    #+#             */
-/*   Updated: 2025/01/01 17:45:50 by ialdidi          ###   ########.fr       */
+/*   Updated: 2025/01/05 14:44:48 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,9 @@ class ClapTrap {
 		unsigned int	attackDamage;
 	public:
 		ClapTrap(std::string name);
-		// ClapTrap(const ClapTrap& obj);
+		ClapTrap(const ClapTrap& obj);
 		~ClapTrap();
-		// ClapTrap& operator=(const ClapTrap& obj);
-		void print_attrs();
+		ClapTrap& operator=(const ClapTrap& obj);
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
