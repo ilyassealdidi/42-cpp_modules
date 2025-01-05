@@ -6,7 +6,7 @@
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 17:04:31 by ialdidi           #+#    #+#             */
-/*   Updated: 2025/01/05 20:42:23 by ialdidi          ###   ########.fr       */
+/*   Updated: 2025/01/04 18:56:24 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ class ScavTrap : public ClapTrap
 {
 	public :
 		ScavTrap(std::string name);
+		ScavTrap(const ScavTrap &other);
+		ScavTrap& operator=(const ScavTrap &other);
 		~ScavTrap();
 		void attack(const std::string& target);
 		void guardGate();

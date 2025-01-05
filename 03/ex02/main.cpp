@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/01 17:04:31 by ialdidi           #+#    #+#             */
-/*   Updated: 2025/01/05 20:42:23 by ialdidi          ###   ########.fr       */
+/*   Created: 2024/12/28 22:30:35 by ialdidi           #+#    #+#             */
+/*   Updated: 2025/01/01 20:59:38 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
+#include "ScavTrap.hpp"
 
-#include "ClapTrap.hpp"
-
-class ScavTrap : public ClapTrap
+int main()
 {
-	public :
-		ScavTrap(std::string name);
-		~ScavTrap();
-		void attack(const std::string& target);
-		void guardGate();
-};
-
-#endif
+	ScavTrap clapTrap("enemy");
+	clapTrap.attack("Zte9 ata9");
+	return 0;
+}
