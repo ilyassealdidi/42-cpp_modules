@@ -21,16 +21,13 @@ void Utils::write(std::string str)
 
 void Utils::writeNewLine()
 {
-	write("\n");
+	if (std::cin.eof())
+		return ;
+	std::cout << std::endl;
 }
 
 void Utils::writeLine(std::string str)
 {
-	write(str + "\n");
-}
-
-std::string Utils::to_string(int value) {
-    std::ostringstream oss;
-    oss << value;
-    return oss.str();
+	write(str);
+	writeNewLine();
 }

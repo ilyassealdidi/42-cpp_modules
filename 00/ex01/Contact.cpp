@@ -114,23 +114,20 @@ std::string Contact::getNickname(bool shortVersion) {
 std::string Contact::getDarkSecret() {
 	return (this->darkSecret);
 }
-#include <cstdlib>
+
 void Contact::setMember(std::string field, func Contact::*fn)
 {
 	std::string str;
 
 	while (true)
 	{
-		Utils::write("\n\t\tEnter the " + field + ": ");
+		Utils::write("\t\tEnter the " + field + ": ");
 		std::getline(std::cin , str);
 		if (std::cin.eof())
 			return ;
-		Utils::write("\033[1A\033[" + Utils::to_string(field.length() + str.length() + "\t\t".length()) + "G");
 		if ((this->*fn)(str))
-		{
-			Utils::write("\033[3m✅" RESET);
 			break ;
-		}
-		Utils::write(RED "\033[3m❌ Invalid " + field +", Try again!" RESET);
+		Utils::write(RED "\t\t\t Invalid " + field + ", Try again!" RESET);
+		Utils::writeNewLine();
 	}
 }

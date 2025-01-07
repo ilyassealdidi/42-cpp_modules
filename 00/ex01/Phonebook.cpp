@@ -36,6 +36,7 @@ void PhoneBook::displayMenu() {
 void PhoneBook::addContact() {
 	Contact contact;
 
+	Utils::writeNewLine();
 	contact.setMember("first name", &Contact::setFirstName);
 	contact.setMember("last name", &Contact::setLastName);
 	contact.setMember("phone number", &Contact::setPhoneNumber);
@@ -45,7 +46,7 @@ void PhoneBook::addContact() {
 		contacts[index++].setContact(contact);
 	else
 		contacts[0].setContact(contact);
-	Utils::writeLine(GREEN "\n\n\t\tThe contact has been succesfully added\n" RESET);
+	Utils::writeLine(GREEN "\n\t\tThe contact has been succesfully added\n" RESET);
 }
 
 void displayField(std::string field)
@@ -80,14 +81,14 @@ void PhoneBook::displayContacts() {
 		std::getline(std::cin, index);
 		if (std::cin.eof())
 			return ;
-		num = index[0] - '1';
-		if (index.length() != 1 || (isdigit(index[0]) == 0)
-			|| !(num >= 0 && num <= 7))
+		num = index[0] - '0';
+		if (index.length() != 1 || isdigit(index[0]) == 0
+			|| !(num > 0 && num <= this->index))
 		{
 			Utils::writeLine(RED "\t\tInvalid index" RESET);
 			continue;
 		}
-		contacts[num].showContact();
+		contacts[num - 1].showContact();
 		break ;
 	}
 }

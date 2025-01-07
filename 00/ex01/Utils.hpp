@@ -27,7 +27,6 @@ class Utils {
 		static void write(std::string);
 		static void writeLine(std::string);
 		static void writeNewLine();
-		static std::string to_string(int);
 };
 
 #endif
