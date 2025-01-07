@@ -125,10 +125,9 @@ void Contact::setMember(std::string field, func Contact::*fn)
 		std::getline(std::cin , str);
 		if (std::cin.eof())
 			return ;
-		Utils::write("\033[1A\033[" + Utils::to_string(field.length() + str.length() + 22) + "G");
+		Utils::write("\033[1A\033[" + Utils::to_string(field.length() + str.length() + "\t\t".length()) + "G");
 		if ((this->*fn)(str))
 		{
-			
 			Utils::write("\033[3m✅" RESET);
 			break ;
 		}

@@ -15,7 +15,7 @@
 
 # include "Contact.hpp"
 # include <iomanip>
-#include <cstdlib>
+# include <cstdlib>
 # include "Utils.hpp"
 
 class	PhoneBook
@@ -26,8 +26,6 @@ class	PhoneBook
 		void	addContact();
 		void	displayContacts();
 		void	displayMenu();
-		// int		getIndex();
-		// void	incrementIndex();
 	private:
 		Contact	contacts[8];
 		int		index;
