@@ -1,6 +1,6 @@
-NAME	= megaphone
-SRCS	= main.cpp Phonebook.cpp Contact.cpp Utils.cpp
-INCS	= Phonebook.hpp Contact.hpp Utils.hpp
+NAME	= bank
+SRCS	= tests.cpp Account.cpp
+INCS	= Account.hpp
 OBJS	= $(SRCS:.cpp=.o)
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 
