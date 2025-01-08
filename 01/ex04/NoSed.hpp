@@ -6,7 +6,7 @@
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 20:24:51 by ialdidi           #+#    #+#             */
-/*   Updated: 2024/12/21 10:25:37 by ialdidi          ###   ########.fr       */
+/*   Updated: 2025/01/08 20:14:52 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 #define NOSED_HPP
 
 #include <fstream>
-#include <string.h>
 #include <iostream>
+#include <string.h>
 
 class NoSed {
 	public :
