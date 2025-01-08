@@ -21,3 +21,5 @@ CPP 03 => Unify constructor and destructor msgs
 	ex01 => OK
 	ex02 => OK
 	ex03 => 
+
+Difference between new and malloc
