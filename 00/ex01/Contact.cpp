@@ -6,67 +6,101 @@
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 19:58:59 by ialdidi           #+#    #+#             */
-/*   Updated: 2024/12/28 14:41:20 by ialdidi          ###   ########.fr       */
+/*   Updated: 2025/01/08 21:38:49 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-bool isAlpha(std::string str) {
-	for (int i = 0; str[i] != 0; i++) {
-		if (isalpha(str[i]) == 0)
-			return false;
-	}
-	return true;
+bool isValidName(std::string name) {
+    if (name.empty()) {
+        return false;
+    }
+
+    if (!std::isalpha(name[0]) || !std::isalpha(name[name.length() - 1])) {
+        return false;
+    }
+
+    bool lastWasSpace = false;
+
+    for (char c : name) {
+        if (std::isalpha(c) == 1) {
+            lastWasSpace = false;
+            continue;
+        }
+        else if (c == ' ') {
+            if (lastWasSpace) {
+                return false;
+            }
+            lastWasSpace = true;
+            continue;
+        }
+
+        return false;
+    }
+
+    return true;
 }
 
-bool isNumber(std::string str) {
+bool isPrintableString(std::string str) {
 	for (int i = 0; str[i] != 0; i++) {
-		if (isdigit(str[i]) == 0)
-			return false;
-	}
-	return true;
-}
-
-bool isPrintable(std::string str) {
-	for (int i = 0; str[i] != 0; i++) {
-		if (isprint(str[i]) == 0)
+		if (std::isprint(str[i]) == 0)
 			return false;
 	}
 	return true;
 }
 
 bool Contact::setFirstName(std::string firstName) {
-	if (firstName.empty() || !isAlpha(firstName))
-		return false;
-	this->firstName = firstName;
+	if (!isValidName(lastName)) {
+		return false;	
+	}
+
+	this->lastName = lastName;
 	return true;
 }
 
 bool Contact::setLastName(std::string lastName) {
-	if (lastName.empty() || !isAlpha(lastName))
-		return false;
+	if (!isValidName(lastName)) {
+		return false;	
+	}
+
 	this->lastName = lastName;
 	return true;
 }
 
 bool Contact::setPhoneNumber(std::string phoneNumber) {
-	if (phoneNumber.empty() || !isNumber(phoneNumber))
-		return false;
+	if (phoneNumber.length() != 10) {
+        return false;
+    }
+
+    if (phoneNumber[0] != '0') {
+        return false;
+    }
+	
+    for (char c : phoneNumber) {
+        if (!std::isdigit(c)) {
+            return false;
+        }
+    }
+
 	this->phoneNumber = phoneNumber;
 	return true;
 }
 
 bool Contact::setNickname(std::string nickname) {
-	if (nickname.empty() || !isPrintable(nickname))
+	if (nickname.empty() || !isPrintableString(nickname)) {	
 		return false;
+	}
+
 	this->nickname = nickname;
 	return true;
 }
 
 bool Contact::setDarkSecret(std::string darkSecret) {
-	if (darkSecret.empty() || !isPrintable(nickname))
+	if (darkSecret.empty() || !isPrintableString(nickname)) {	
 		return false;
+	}
+
 	this->darkSecret = darkSecret;
 	return true;
 }
