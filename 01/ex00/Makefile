@@ -7,10 +7,10 @@ NAME = zombie
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	c++ $(OBJS) -o $(NAME)
+	c++ $(FLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.cpp $(INCS)
-	c++ $(CFLAGS) -c $< -o $@
+	c++ $(FLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)

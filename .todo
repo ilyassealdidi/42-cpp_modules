@@ -22,4 +22,6 @@ CPP 03 => Unify constructor and destructor msgs
 	ex02 => OK
 	ex03 => 
 
+Change tests in main
 Difference between new and malloc
+static keyword

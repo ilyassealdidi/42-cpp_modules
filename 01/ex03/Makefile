@@ -1,14 +1,16 @@
 NAME	= necessary_violence
 SRCS	= main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
+INCS	= HumanA.hpp HumanB.hpp Weapon.hpp
 OBJS	= $(SRCS:.cpp=.o)
+FLAGS	= -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	c++ $(OBJS) -o $(NAME)
+	c++ $(FLAGS) $(OBJS) -o $(NAME)
 
-%.o: %.cpp HumanA.hpp HumanB.hpp Weapon.hpp
-	c++ -Wall -Wextra -Werror -std=c++98 -c $< -o $@
+%.o: %.cpp $(INCS)
+	c++ $(FLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS)

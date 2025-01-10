@@ -1,15 +1,16 @@
-NAME = main
-SRCS = main.cpp
+NAME = harl
+SRCS = main.cpp Harl.cpp
+INCS = Harl.hpp
 OBJS = $(SRCS:.cpp=.o)
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	c++ $(OBJS) -o $(NAME)
 
-%.o: %.cpp
-	c++ $(CFLAGS) -c $< -o $@
+%.o: %.cpp $(INCS)
+	c++ $(FLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)
