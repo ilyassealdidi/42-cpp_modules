@@ -25,7 +25,7 @@ class Contact {
 		std::string	nickname;
 		std::string darkSecret;
 	public:
-		void setMember(std::string, func Contact::*fn);
+		void setMember(std::string, func Contact::*);
 		bool setFirstName(std::string);
 		bool setLastName(std::string);
 		bool setPhoneNumber(std::string);

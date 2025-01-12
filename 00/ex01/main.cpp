@@ -13,7 +13,7 @@
 
 #include "Phonebook.hpp"
 
-int main(void)
+int main()
 {
 	PhoneBook	phonebook;
 	std::string	command;

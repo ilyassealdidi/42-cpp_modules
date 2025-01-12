@@ -23,12 +23,12 @@ bool isValidName(std::string name) {
 
     bool lastWasSpace = false;
 
-    for (char c : name) {
-        if (std::isalpha(c) == 1) {
+    for (size_t i = 0; i < name.length(); i++) {
+        if (std::isalpha(name[i])) {
             lastWasSpace = false;
             continue;
         }
-        else if (c == ' ') {
+        else if (name[i] == ' ') {
             if (lastWasSpace) {
                 return false;
             }
@@ -43,19 +43,22 @@ bool isValidName(std::string name) {
 }
 
 bool isPrintableString(std::string str) {
-	for (int i = 0; str[i] != 0; i++) {
-		if (std::isprint(str[i]) == 0)
+	for (size_t i = 0; i < str.length(); i++) {
+		if (std::isprint(str[i]) == 0) {
 			return false;
+		}
 	}
+
 	return true;
 }
 
 bool Contact::setFirstName(std::string firstName) {
-	if (!isValidName(lastName)) {
+	if (!isValidName(firstName)) {
 		return false;	
 	}
 
-	this->lastName = lastName;
+	this->firstName = firstName;
+
 	return true;
 }
 
@@ -65,6 +68,7 @@ bool Contact::setLastName(std::string lastName) {
 	}
 
 	this->lastName = lastName;
+
 	return true;
 }
 
@@ -77,13 +81,14 @@ bool Contact::setPhoneNumber(std::string phoneNumber) {
         return false;
     }
 	
-    for (char c : phoneNumber) {
-        if (!std::isdigit(c)) {
+	for (size_t i = 0; i < phoneNumber.length(); i++) {
+        if (!std::isdigit(phoneNumber[i])) {
             return false;
         }
     }
 
 	this->phoneNumber = phoneNumber;
+
 	return true;
 }
 
@@ -93,6 +98,7 @@ bool Contact::setNickname(std::string nickname) {
 	}
 
 	this->nickname = nickname;
+
 	return true;
 }
 
@@ -102,6 +108,7 @@ bool Contact::setDarkSecret(std::string darkSecret) {
 	}
 
 	this->darkSecret = darkSecret;
+
 	return true;
 }
 
@@ -126,12 +133,14 @@ void Contact::setContact(Contact contact)
 std::string Contact::getFirstName(bool shortVersion) {
 	if (shortVersion && this->firstName.length() > 10)
 		return this->firstName.substr(0, 9) + ".";
+
 	return (this->firstName);
 }
 
 std::string Contact::getLastName(bool shortVersion) {
 	if (shortVersion && this->lastName.length() > 10)
 		return this->lastName.substr(0, 9) + ".";
+
 	return (this->lastName);
 }
 
@@ -142,6 +151,7 @@ std::string Contact::getPhoneNumber() {
 std::string Contact::getNickname(bool shortVersion) {
 	if (shortVersion && this->nickname.length() > 10)
 		return this->nickname.substr(0, 9) + ".";
+
 	return (this->nickname);
 }
 

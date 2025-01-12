@@ -42,10 +42,12 @@ void PhoneBook::addContact() {
 	contact.setMember("phone number", &Contact::setPhoneNumber);
 	contact.setMember("nickname", &Contact::setNickname);
 	contact.setMember("dark secret", &Contact::setDarkSecret);
+
 	if (index != 8)
 		contacts[index++].setContact(contact);
 	else
 		contacts[0].setContact(contact);
+
 	Utils::writeLine(GREEN "\n\t\tThe contact has been succesfully added\n" RESET);
 }
 
@@ -61,11 +63,13 @@ void PhoneBook::displayContacts() {
 	int num;
 
 	Utils::writeNewLine();
+
 	if (index == 0)
 	{
 		Utils::writeLine(YELLOW "\t\tNo contacts to show :(" RESET);
 		return ;
 	}
+
 	for (int i = 0; i < index; i++)
 	{
 		std::cout << GREEN "\t\t" << (i + 1) << ") " RESET;
@@ -73,21 +77,25 @@ void PhoneBook::displayContacts() {
 		std::cout << std::setw(10) << contacts[i].getLastName(true) << "|";
 		std::cout << std::setw(10) << contacts[i].getNickname(true) << std::endl;
 	}
+
 	Utils::writeNewLine();
+
 	while (true)
 	{
 		Utils::write("Choose a contact : ");
 		std::string index;
 		std::getline(std::cin, index);
+
 		if (std::cin.eof())
 			return ;
+
 		num = index[0] - '0';
 		if (index.length() != 1 || isdigit(index[0]) == 0
-			|| !(num > 0 && num <= this->index))
-		{
+			|| !(num > 0 && num <= this->index)) {
 			Utils::writeLine(RED "\t\tInvalid index" RESET);
 			continue;
 		}
+
 		contacts[num - 1].showContact();
 		break ;
 	}
