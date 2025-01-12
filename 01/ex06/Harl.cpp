@@ -32,8 +32,7 @@ void Harl::error(void) {
 	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
-int indexOfString(std::string str, std::string arr[], int size)
-{
+int indexOfString(std::string str, std::string arr[], int size) {
 	for (int i = 0; i < size; i++)
 	{
 		if (str == arr[i])
@@ -42,8 +41,7 @@ int indexOfString(std::string str, std::string arr[], int size)
 	return (-1);
 }
 
-void Harl::complain (std::string level)
-{
+void Harl::complain (std::string level) {
     std::string levels[4] = {"DEBUG" , "INFO", "WARNING", "ERROR"};
     int level_id = indexOfString(level, levels, 4);
 

@@ -7,10 +7,10 @@ FLAGS	= -Wall -Wextra -Werror -std=c++98
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	c++ $(OBJS) -o $(NAME)
+	c++ $(FLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.cpp $(INCS)
-	c++ -Wall -Wextra -Werror -std=c++98 -c $< -o $@
+	c++ $(FLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS)
