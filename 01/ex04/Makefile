@@ -1,6 +1,6 @@
-NAME	= ctrl_f
-SRCS	= main.cpp NoSed.cpp
-INCS	= NoSed.hpp
+NAME	= ctrl_h
+SRCS	= main.cpp CtrlH.cpp
+INCS	= CtrlH.hpp
 OBJS	= $(SRCS:.cpp=.o)
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 

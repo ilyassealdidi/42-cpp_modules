@@ -6,7 +6,7 @@
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 20:27:46 by ialdidi           #+#    #+#             */
-/*   Updated: 2024/12/18 21:26:09 by ialdidi          ###   ########.fr       */
+/*   Updated: 2025/01/18 12:52:44 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,8 @@
 class HumanA {
 	private :
 		std::string name;
-		Weapon *weapon;
+		Weapon &weapon;
 	public :
-		~HumanA();
 		HumanA(std::string name, Weapon &weapon);
 		void attack();
 };

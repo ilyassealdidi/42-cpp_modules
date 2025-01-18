@@ -6,7 +6,7 @@
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 21:31:55 by ialdidi           #+#    #+#             */
-/*   Updated: 2024/12/18 21:31:56 by ialdidi          ###   ########.fr       */
+/*   Updated: 2025/01/18 12:52:36 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ class HumanB {
 		Weapon *weapon;
 	public :
 		HumanB(std::string name);
-		~HumanB();
 		void setWeapon(Weapon& weapon);
 		void attack();
 };
