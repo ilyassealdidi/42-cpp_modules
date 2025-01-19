@@ -6,7 +6,7 @@
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 19:50:46 by ialdidi           #+#    #+#             */
-/*   Updated: 2025/01/19 11:59:46 by ialdidi          ###   ########.fr       */
+/*   Updated: 2025/01/19 12:17:14 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ FragTrap::FragTrap() {
 }
 
 FragTrap::FragTrap(std::string name) {
-	std::cout << "FragTrap " << name << " is created" << std::endl;
+	std::cout << "FragTrap constructor called" << std::endl;
 	this->name = name;
 	this->hitPoints = 100;
 	this->energyPoints = 100;
@@ -44,7 +44,7 @@ FragTrap& FragTrap::operator=(const FragTrap &other) {
 }
 
 FragTrap::~FragTrap() {
-	std::cout << "FragTrap " << this->name << " is destroyed" << std::endl;
+	std::cout << "FragTrap destructor called" << std::endl;
 }
 
 void FragTrap::highFivesGuys() {

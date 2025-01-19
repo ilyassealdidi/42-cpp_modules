@@ -6,11 +6,12 @@
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/29 12:52:27 by ialdidi           #+#    #+#             */
-/*   Updated: 2025/01/19 11:47:48 by ialdidi          ###   ########.fr       */
+/*   Updated: 2025/01/19 12:13:54 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include <iostream>
 
 ClapTrap::ClapTrap() {
 	std::cout << "ClapTrap constructor called" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 17:04:08 by ialdidi           #+#    #+#             */
-/*   Updated: 2025/01/19 12:06:01 by ialdidi          ###   ########.fr       */
+/*   Updated: 2025/01/19 12:13:45 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ ScavTrap::ScavTrap() {
 }
 
 ScavTrap::ScavTrap(std::string name) {
-	std::cout << "ScavTrap " << name << " is created" << std::endl;
+	std::cout << "ScavTrap constructor called" << std::endl;
 	this->name = name;
 	this->hitPoints = 100;
 	this->energyPoints = 50;
@@ -44,7 +44,7 @@ ScavTrap& ScavTrap::operator=(const ScavTrap &other) {
 }
 
 ScavTrap::~ScavTrap() {
-	std::cout << "ScavTrap " << this->name << " is destroyed" << std::endl;
+	std::cout << "ScavTrap destructor called" << std::endl;
 }
 
 void ScavTrap::guardGate() {
