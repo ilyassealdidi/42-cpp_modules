@@ -6,11 +6,19 @@
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/29 12:52:27 by ialdidi           #+#    #+#             */
-/*   Updated: 2025/01/05 20:47:34 by ialdidi          ###   ########.fr       */
+/*   Updated: 2025/01/19 11:47:48 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
+ClapTrap::ClapTrap() {
+	std::cout << "ClapTrap constructor called" << std::endl;
+	name = "anonymous_claptrap";
+	hitPoints = 10;
+	energyPoints = 10;
+	attackDamage = 0;
+}
 
 ClapTrap::ClapTrap(std::string name) {
 	std::cout << "ClapTrap constructor called" << std::endl;
@@ -18,6 +26,20 @@ ClapTrap::ClapTrap(std::string name) {
 	hitPoints = 10;
 	energyPoints = 10;
 	attackDamage = 0;
+}
+
+ClapTrap::ClapTrap(const ClapTrap& obj) {
+	std::cout << "ClapTrap copy constructor called" << std::endl;
+	*this = obj;
+}
+
+ClapTrap& ClapTrap::operator=(const ClapTrap& obj) {
+	std::cout << "ClapTrap assignation operator called" << std::endl;
+	name = obj.name;
+	hitPoints = obj.hitPoints;
+	energyPoints = obj.energyPoints;
+	attackDamage = obj.attackDamage;
+	return *this;
 }
 
 ClapTrap::~ClapTrap() {

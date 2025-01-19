@@ -6,7 +6,7 @@
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 20:54:27 by ialdidi           #+#    #+#             */
-/*   Updated: 2025/01/05 20:55:51 by ialdidi          ###   ########.fr       */
+/*   Updated: 2025/01/18 23:06:10 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,11 @@ class DiamondTrap : public ScavTrap, public FragTrap
 	private:
 		std::string name;
 	public:
-		DiamondTrap(std::string name);
+		DiamondTrap();
+		DiamondTrap(const DiamondTrap& other);
+		DiamondTrap& operator=(const DiamondTrap& other);
 		~DiamondTrap();
+		DiamondTrap(std::string name);
 		void attack(const std::string& target);
 		void whoAmI();
 };

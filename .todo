@@ -1,9 +1,3 @@
-CPP 00
-	ex00 => 
-	ex01 => 
-	ex02 => 
-	ex03 => 
-
 CPP 01
 	ex00 => 
 	ex01 => 
@@ -16,7 +10,8 @@ CPP 02
 	ex02 => 
 	ex03 => 
 
-CPP 03 => Unify constructor and destructor msgs
+CPP 03 => Unify constructor and destructor msgs and implement TOCF
+In TOCF change obj to other
 	ex00 => OK
 	ex01 => OK
 	ex02 => OK

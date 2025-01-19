@@ -6,17 +6,29 @@
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 22:03:42 by ialdidi           #+#    #+#             */
-/*   Updated: 2025/01/13 22:06:52 by ialdidi          ###   ########.fr       */
+/*   Updated: 2025/01/18 18:53:45 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+#include <cmath>
+#include <iostream>
 
-const int Fixed::FractBit = 8;
+const int Fixed::FractionalPartBits = 8;
 
 Fixed::Fixed(){
 	std::cout << "Default constructor called" << std::endl;
 	this->number = 0;
+}
+
+Fixed::Fixed(const int value){
+	std::cout << "Int constructor called" << std::endl;
+	this->number = value << Fixed::FractionalPartBits;
+}
+
+Fixed::Fixed(const float value){
+	std::cout << "Float constructor called" << std::endl;
+	this->number = roundf(value * (1 << Fixed::FractionalPartBits));
 }
 
 Fixed::Fixed(const Fixed &other){
@@ -42,4 +54,18 @@ int	Fixed::getRawBits() const{
 
 void Fixed::setRawBits(int const raw){
 	this->number = raw;
+}
+
+int Fixed::toInt() const{
+	return (this->number >> Fixed::FractionalPartBits);
+}
+
+float Fixed::toFloat() const{
+	return ((float)this->number / (1 << Fixed::FractionalPartBits));
+}
+
+std::ostream &operator<< (std::ostream &stream, const Fixed &obj)
+{
+    stream << obj.toFloat();
+	return (stream);
 }

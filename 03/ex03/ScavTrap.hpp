@@ -6,7 +6,7 @@
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 17:04:31 by ialdidi           #+#    #+#             */
-/*   Updated: 2025/01/05 20:48:54 by ialdidi          ###   ########.fr       */
+/*   Updated: 2025/01/19 10:54:53 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,13 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
 	public :
+		ScavTrap();
 		ScavTrap(std::string name);
+		ScavTrap(const ScavTrap& obj);
+		ScavTrap& operator=(const ScavTrap& obj);
 		~ScavTrap();
 		void attack(const std::string& target);
 		void guardGate();
