@@ -7,7 +7,7 @@ NAME = fixed
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	c++ $(OBJS) -o $(NAME)
+	c++ $(CFLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.cpp $(INCS)
 	c++ $(CFLAGS) -c $< -o $@

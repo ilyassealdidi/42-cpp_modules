@@ -20,20 +20,20 @@ class Fixed
 {
 	private:
 		int	number;
-		static const int FractBit;
+		static const int FractionalPartBits;
 
 	public:
 		Fixed();
-		Fixed(int const Nbr);
-		Fixed(float const Nbr);
+		Fixed(int const value);
+		Fixed(float const value);
 		Fixed(const Fixed &other);
 		Fixed& operator=(const Fixed& other);
 		~Fixed();
-		int getRawBits( void ) const;
-		void setRawBits( int const raw );
-		
-		float	toFloat( void ) const;
-		int		toInt( void ) const;
+
+		int		getRawBits(void) const;
+		void	setRawBits(int const raw);
+		float	toFloat(void) const;
+		int		toInt(void) const;
 		
 		bool	operator==(const Fixed& other) const;
 		bool	operator!=(const Fixed& other) const;
