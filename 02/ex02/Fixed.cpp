@@ -6,7 +6,7 @@
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 22:03:42 by ialdidi           #+#    #+#             */
-/*   Updated: 2025/01/13 22:29:59 by ialdidi          ###   ########.fr       */
+/*   Updated: 2025/01/23 19:06:49 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Fixed::Fixed(const float value) {
 }
 
 Fixed::Fixed(const Fixed &other) {
-	this->number = other.getRawBits();
+	*this = other;
 }
 
 Fixed& Fixed::operator=(const Fixed& other) {

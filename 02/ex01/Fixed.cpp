@@ -6,7 +6,7 @@
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 22:03:42 by ialdidi           #+#    #+#             */
-/*   Updated: 2025/01/18 18:53:45 by ialdidi          ###   ########.fr       */
+/*   Updated: 2025/01/23 19:05:47 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Fixed::Fixed(const float value) {
 
 Fixed::Fixed(const Fixed &other) {
 	std::cout << "Copy constructor called" << std::endl;
-	this->number = other.getRawBits();
+	*this = other;
 }
 
 Fixed& Fixed::operator=(const Fixed& other) {
