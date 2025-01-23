@@ -6,7 +6,7 @@
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 22:03:42 by ialdidi           #+#    #+#             */
-/*   Updated: 2025/01/23 19:06:49 by ialdidi          ###   ########.fr       */
+/*   Updated: 2025/01/23 19:23:29 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,18 +106,18 @@ Fixed Fixed::operator++(int) {
 	return (tmp);
 }
 
-Fixed Fixed::operator--(int) { //why int
+Fixed Fixed::operator--(int) {
 	Fixed	tmp(*this);
 	this->number--;
 	return (tmp);
 }
 
-Fixed& Fixed::operator++(void) {
+Fixed Fixed::operator++(void) {
 	this->number++;
 	return (*this);
 }
 
-Fixed& Fixed::operator--(void) {
+Fixed Fixed::operator--(void) {
 	this->number--;
 	return (*this);
 }

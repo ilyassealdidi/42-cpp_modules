@@ -6,7 +6,7 @@
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 22:03:15 by ialdidi           #+#    #+#             */
-/*   Updated: 2025/01/13 22:24:09 by ialdidi          ###   ########.fr       */
+/*   Updated: 2025/01/23 19:21:23 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ class Fixed
 		Fixed	operator*(const Fixed& other) const;
 		Fixed	operator/(const Fixed& other) const;
 
-		Fixed&	operator++(void);
-		Fixed&	operator--(void);
+		Fixed	operator++(void);
+		Fixed	operator--(void);
 		Fixed	operator++(int);
 		Fixed	operator--(int);
 
