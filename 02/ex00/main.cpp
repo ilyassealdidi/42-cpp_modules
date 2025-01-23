@@ -6,11 +6,12 @@
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 17:14:17 by ialdidi           #+#    #+#             */
-/*   Updated: 2025/01/13 22:08:02 by ialdidi          ###   ########.fr       */
+/*   Updated: 2025/01/23 19:31:46 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+#include <iostream>
 
 int main( void ) {
 	Fixed a;
