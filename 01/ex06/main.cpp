@@ -6,7 +6,7 @@
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 14:10:44 by ialdidi           #+#    #+#             */
-/*   Updated: 2025/01/10 15:50:45 by ialdidi          ###   ########.fr       */
+/*   Updated: 2025/01/24 15:18:48 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ int main(int ac , char **av) {
 	Harl harl;
 
 	if (ac != 2) {
-		std::cerr << "Usage: ./ex06 [DEBUG|INFO|WARNING|ERROR]" << std::endl;
+		std::cout << "Usage: ./ex06 [DEBUG|INFO|WARNING|ERROR]" << std::endl;
+		return 1;
 	}
 
 	harl.complain(av[1]);
