@@ -15,7 +15,7 @@
 int main() {
     int num = 5;
     Zombie* zombies = zombieHorde(num, "Zombie");
-	if (zombies != nullptr)
+	if (zombies != NULL)
 	{
 		for (int i = 0; i < num; i++)
 			zombies[i].announce();

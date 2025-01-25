@@ -36,7 +36,7 @@ int indexOfString(std::string str, std::string arr[], int size) {
 	for (int i = 0; i < size; i++)
 	{
 		if (str == arr[i])
-			return (i);
+			return (i + 1);
 	}
 	return (-1);
 }
@@ -49,24 +49,14 @@ void Harl::complain (std::string level) {
     {
         case 1:
             debug();
-            info();
-            warning();
-            error();
-            break ;
         case 2:
             info();
-            warning();
-            error();
-            break ;
         case 3 :
             warning();
-            error();
-            break ;
         case 4 :
             error();
             break ;
         default:
             std::cout << "[ Probably complaining about insignificant problems ]\n";
-            break;
     }
 }

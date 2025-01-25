@@ -12,8 +12,6 @@
 
 #include "CtrlH.hpp"
 
-
-
 int main(int ac, char *av[]) {
 	if (ac != 4) {
 		std::cout << "Invalid input !" << std::endl;
