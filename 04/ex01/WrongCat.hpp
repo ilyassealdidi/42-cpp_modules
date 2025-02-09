@@ -12,9 +12,9 @@ class WrongCat : public WrongAnimal
         WrongCat &operator=(const WrongCat &obj);
         ~WrongCat();
 
-        void makeSound () const;
+		void makeSound() const;
 
-		std::string getType ( void ) const;
+        std::string getType(void) const;
 		void setType (std::string type);
 };
 
