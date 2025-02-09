@@ -30,6 +30,11 @@ std::string Dog::getType(void) const
     return (this->type);
 }
 
+void Dog::setType(std::string type)
+{
+	this->type = type;
+}
+
 Dog::Dog(const Dog &obj) : Animal(obj)
 {
     std::cout << "Dog copy constructor called" << std::endl;
