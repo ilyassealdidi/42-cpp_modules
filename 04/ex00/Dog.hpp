@@ -11,9 +11,9 @@ class Dog : public Animal
         Dog &operator=(const Dog &obj);
         ~Dog();
         Dog(std::string type);
-        void makeSound () const;
-        std::string getType ( void ) const;
-        
+        void makeSound() const;
+        std::string getType(void) const;
+        void setType (std::string type);	
 };
 
 #endif
