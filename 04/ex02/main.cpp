@@ -7,16 +7,17 @@
 
 int main()
 {
-	const WrongAnimal* meta = new WrongAnimal();
-	const AAnimal* j = new Dog();
-	const WrongAnimal* i = new WrongCat();
+	int num = 10;
+    AAnimal *animals[num];
 
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
+	for (int i = 0; i < num; i++) {
+		if (i % 2 == 0)
+			animals[i] = new Dog;
+		else
+			animals[i] = new Cat;
+	}
 
-	i->makeSound();
-	j->makeSound();
-	meta->makeSound();
-
+    for (int i = 0; i < num ; i++)
+        delete animals[i];
 	return 0;
 }

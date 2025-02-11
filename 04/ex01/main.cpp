@@ -5,16 +5,18 @@
 #include "Cat.hpp"
 #include <iostream>
 
-int main()
+int main ()
 {
-	const WrongAnimal* meta = new WrongAnimal();
-	const Animal* j = new Dog();
-	const WrongAnimal* i = new WrongCat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound();
-	j->makeSound();
-	meta->makeSound();
+	int num = 10;
+    Animal *animals[num];
 
-	return 0;
+	for (int i = 0; i < num; i++) {
+		if (i % 2 == 0)
+			animals[i] = new Dog;
+		else
+			animals[i] = new Cat;
+	}
+
+    for (int i = 0; i < num ; i++)
+        delete animals[i];
 }
