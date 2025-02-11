@@ -6,7 +6,7 @@
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 19:50:04 by ialdidi           #+#    #+#             */
-/*   Updated: 2025/01/19 12:00:10 by ialdidi          ###   ########.fr       */
+/*   Updated: 2025/02/11 20:41:31 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class FragTrap : public ClapTrap {
 		FragTrap(const FragTrap& other);
 		FragTrap& operator=(const FragTrap& other);
 		~FragTrap();
+
 		void highFivesGuys();
 };
 

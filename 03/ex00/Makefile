@@ -1,5 +1,6 @@
 NAME = claptrap
 SRCS = main.cpp ClapTrap.cpp
+INCS = ClapTrap.hpp
 OBJS = $(SRCS:.cpp=.o)
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
@@ -8,7 +9,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	c++ $(FLAGS) $(OBJS) -o $(NAME)
 
-%.o: %.cpp ClapTrap.hpp
+%.o: %.cpp $(INCS)
 	c++ $(FLAGS) -c $< -o $@
 
 clean:

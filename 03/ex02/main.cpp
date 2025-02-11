@@ -6,7 +6,7 @@
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 22:30:35 by ialdidi           #+#    #+#             */
-/*   Updated: 2025/01/19 12:03:55 by ialdidi          ###   ########.fr       */
+/*   Updated: 2025/02/11 20:40:50 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 int main()
 {
-	FragTrap Frag("ialdidi");
+	FragTrap fragTrap("ialdidi");
 
-	Frag.attack("ezahiri");
-	Frag.highFivesGuys();
+	fragTrap.attack("enemy");
+    fragTrap.takeDamage(10);
+    fragTrap.beRepaired(10);
+    fragTrap.highFivesGuys();
 
 	return 0;
 }

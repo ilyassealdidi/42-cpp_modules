@@ -6,7 +6,7 @@
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 17:04:08 by ialdidi           #+#    #+#             */
-/*   Updated: 2025/01/19 12:13:45 by ialdidi          ###   ########.fr       */
+/*   Updated: 2025/02/11 20:32:10 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,13 @@
 
 ScavTrap::ScavTrap() {
 	std::cout << "ScavTrap default constructor called" << std::endl;
-	this->name = "anonymous";
 	this->hitPoints = 100;
 	this->energyPoints = 50;
 	this->attackDamage = 20;
 }
 
-ScavTrap::ScavTrap(std::string name) {
-	std::cout << "ScavTrap constructor called" << std::endl;
-	this->name = name;
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
+	std::cout << "ScavTrap parameterized constructor called" << std::endl;
 	this->hitPoints = 100;
 	this->energyPoints = 50;
 	this->attackDamage = 20;
@@ -36,10 +34,13 @@ ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other) {
 
 ScavTrap& ScavTrap::operator=(const ScavTrap &other) {
 	std::cout << "ScavTrap assignation operator called" << std::endl;
-	this->name = other.name;
-	this->hitPoints = other.hitPoints;
-	this->energyPoints = other.energyPoints;
-	this->attackDamage = other.attackDamage;
+	if (this != &other)
+	{
+		this->name = other.name;
+		this->hitPoints = other.hitPoints;
+		this->energyPoints = other.energyPoints;
+		this->attackDamage = other.attackDamage;
+	}
 	return *this;
 }
 
@@ -53,13 +54,13 @@ void ScavTrap::guardGate() {
 
 void ScavTrap::attack(const std::string& target) {
 	if (hitPoints == 0) {
-		std::cout << "ScavTrap " << name << " is already dead" << std::endl;
+		std::cout << "ScavTrap " << this->name << " is already dead" << std::endl;
 	}
 	else if (energyPoints == 0) {
-		std::cout << "ScavTrap " << name << " has no energy points" << std::endl;
+		std::cout << "ScavTrap " << this->name << " has no energy points" << std::endl;
 	}
 	else {
 		energyPoints--;
-		std::cout << "ScavTrap " << name << " attacks " << target << ", causing " << attackDamage << " points of damage!" << std::endl;
+		std::cout << "ScavTrap " << this->name << " attacks " << target << ", causing " << this->attackDamage << " points of damage!" << std::endl;
 	}
 }

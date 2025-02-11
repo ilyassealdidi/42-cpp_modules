@@ -6,7 +6,7 @@
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 17:04:08 by ialdidi           #+#    #+#             */
-/*   Updated: 2025/01/19 12:13:45 by ialdidi          ###   ########.fr       */
+/*   Updated: 2025/02/11 20:35:50 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,13 @@
 
 ScavTrap::ScavTrap() {
 	std::cout << "ScavTrap default constructor called" << std::endl;
-	this->name = "anonymous";
 	this->hitPoints = 100;
 	this->energyPoints = 50;
 	this->attackDamage = 20;
 }
 
-ScavTrap::ScavTrap(std::string name) {
-	std::cout << "ScavTrap constructor called" << std::endl;
-	this->name = name;
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
+	std::cout << "ScavTrap parameterized constructor called" << std::endl;
 	this->hitPoints = 100;
 	this->energyPoints = 50;
 	this->attackDamage = 20;

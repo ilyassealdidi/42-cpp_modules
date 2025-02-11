@@ -6,7 +6,7 @@
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 22:30:57 by ialdidi           #+#    #+#             */
-/*   Updated: 2025/01/19 11:48:52 by ialdidi          ###   ########.fr       */
+/*   Updated: 2025/02/11 20:39:51 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CLAPTRAP_HPP
 
 #include <string>
+#include <iostream>
 
 class ClapTrap {
 	protected:
@@ -27,6 +28,7 @@ class ClapTrap {
 		ClapTrap(const ClapTrap& obj);
 		ClapTrap& operator=(const ClapTrap& obj);
 		~ClapTrap();
+
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
