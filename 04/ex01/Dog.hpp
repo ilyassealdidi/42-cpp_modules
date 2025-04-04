@@ -10,12 +10,14 @@ class Dog : public Animal
 		Brain *brain;
     public :
         Dog();
+        Dog(std::string type);
         Dog(const Dog &obj);
         Dog &operator=(const Dog &obj);
         ~Dog();
-        Dog(std::string type);
+
         void makeSound() const;
-        std::string getType(void) const;
+
+		std::string getType(void) const;
         void setType (std::string type);	
 };
 

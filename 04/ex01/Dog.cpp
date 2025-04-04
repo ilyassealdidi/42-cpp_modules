@@ -38,8 +38,8 @@ void Dog::setType(std::string type)
 Dog::Dog(const Dog &obj) : Animal(obj)
 {
     std::cout << "Dog copy constructor called" << std::endl;
-    *this = obj;
-
+    this->type = obj.type;
+	this->brain = new Brain(*obj.brain);
 }
 
 Dog &Dog::operator=(const Dog &obj)

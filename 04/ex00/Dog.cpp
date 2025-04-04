@@ -12,7 +12,7 @@ Dog::Dog(std::string type)
     std::cout << "Dog constructor called" << std::endl;
 }
 
-Dog::~Dog ()
+Dog::~Dog()
 {
     std::cout << "Dog destructor called" << std::endl;
 }
@@ -20,6 +20,11 @@ Dog::~Dog ()
 void Dog::makeSound(void) const
 {
 	std::cout << "Woof! Woof!" << std::endl;
+}
+
+void Dog::setType(std::string type)
+{
+	this->type = type;
 }
 
 std::string Dog::getType(void) const
