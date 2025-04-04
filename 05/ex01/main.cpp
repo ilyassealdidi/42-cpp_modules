@@ -2,14 +2,11 @@
 #include <iostream>
 
 int main() {
-	try
-	{
+	try {
 		Bureaucrat bureaucrat = Bureaucrat("Ilyasse", 5);
 		Form form = Form("Test", 4, 3);
 		bureaucrat.signForm(form);
-	}
-	catch(std::exception& ex)
-	{
+	} catch(std::exception& ex) {
 		std::cout << ex.what() << std::endl;
 	}
     return 0;
