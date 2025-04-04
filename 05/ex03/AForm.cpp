@@ -22,7 +22,7 @@ AForm::AForm(const AForm &other)
       gradeToExecute(other.gradeToExecute) {
 }
 
-AForm &AForm::operator=(const AForm &other) {
+AForm &AForm::operator= (const AForm &other) {
     this->name = other.name;
     return (*this);
 }

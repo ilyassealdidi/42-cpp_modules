@@ -17,7 +17,7 @@ Form::Form(const std::string &name, int gradeToSign, int gradeToExecute) : name(
 }
 
 Form &Form::operator=(const Form &other) {
-    new (this) Form(other); //!
+    new (this) Form(other);
     return *this;
 }
 

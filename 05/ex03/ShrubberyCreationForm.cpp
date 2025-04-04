@@ -16,18 +16,18 @@ ShrubberyCreationForm::ShrubberyCreationForm (const std::string& target) : AForm
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other) {
     this->target = other.target;
     AForm::operator=(other);
-    return *this;
+    return (*this);
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {
 }
 
 std::string ShrubberyCreationForm::getTarget() const {
-    return this->target;   
+    return (this->target);   
 }
 
 const char *ShrubberyCreationForm::FileNotOpenedException::what() const throw() {
-    return "File not opened";
+    return ("File not opened");
 }
 
 void ShrubberyCreationForm::execute(Bureaucrat const & bureaucrat) const {

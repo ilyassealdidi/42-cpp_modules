@@ -9,8 +9,8 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other) : AFo
 }
 
 RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &other) {
-	this->target = other.target;
-    AForm::operator=(other); // Why?
+  this->target = other.target;
+    AForm::operator=(other);
     return *this;
 }
 
@@ -24,14 +24,13 @@ RobotomyRequestForm::RobotomyRequestForm (const std::string& target) : AForm("Ro
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const {
     if (executor.getGrade() > this->getGradeToExecute())
-        throw AForm::GradeTooLowException();
-    std::cout << "loremipsumdolor... drilling noises..." << std::endl;
-    static bool robotomized = false;
-    if (!robotomized)
+        throw AForm::FormNotSignedException();
+    std::cout << "BZZZZZZ... drilling noises..." << std::endl;
+    time_t r = time(NULL) % 100;
+    if (r % 2 == 0)
         std::cout << this->target << " has been robotomized successfully." << std::endl;
     else
-        std::cout << "The robotomy of " << this->target << " failed." << std::endl;
-	robotomized = !robotomized;
+        std::cout << "The robotomy of " << this->target <<" failed." << std::endl;
 }
 
 RobotomyRequestForm::~RobotomyRequestForm() {
