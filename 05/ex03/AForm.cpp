@@ -72,8 +72,8 @@ const char *AForm::FormNotSignedException::what() const throw() {
 }
 #pragma endregion
 
-#pragma region Operators
-std::ostream &operator<<(std::ostream &os, const Form &form) {
+#pragma region Overloaded Operators
+std::ostream &operator<<(std::ostream &os, const AForm &form) {
     os << "Form " << form.getName() << " (" << (!form.getIsSigned() ? "not " : "") << "signed)" << std::endl;
     os << "Grade required to sign: " << form.getGradeTosign() << std::endl;
     os  << "Grade required to execute: " << form.getGradeToExecute() << std::endl;

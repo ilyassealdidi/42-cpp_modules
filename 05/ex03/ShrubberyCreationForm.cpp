@@ -22,10 +22,6 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 ShrubberyCreationForm::~ShrubberyCreationForm() {
 }
 
-std::string ShrubberyCreationForm::getTarget() const {
-    return (this->target);   
-}
-
 const char *ShrubberyCreationForm::FileNotOpenedException::what() const throw() {
     return ("File not opened");
 }

@@ -1,5 +1,7 @@
 #include "Intern.hpp"
 
+#pragma region Constructors and Destructor
+
 Intern::Intern() {
 }
 
@@ -15,23 +17,45 @@ Intern &Intern::operator=(const Intern &other) {
 Intern::~Intern() {
 }
 
-AForm *Intern::makeForm(std::string formName, std::string target) {
-    AForm *form = nullptr;
+#pragma endregion
 
-    if (formName == "robotomy request") {
-        form = new RobotomyRequestForm(target);
-    } else if (formName == "presidential pardon") {
-        form = new PresidentialPardonForm(target);
-    } else if (formName == "shrubbery creation") {
-        form = new ShrubberyCreationForm(target);
-    } else {
-        std::cout << "Intern can't create " << formName << std::endl;
+#pragma region Member Functions
+
+AForm *Intern::createPresidential(const std::string& name)
+{
+	return (new PresidentialPardonForm(name));
+}
+
+AForm *Intern::createRobotomy(const std::string& name)
+{
+	return (new RobotomyRequestForm(name));
+}
+
+AForm *Intern::createShrubbery(const std::string& name)
+{
+	return (new ShrubberyCreationForm(name));
+}
+
+AForm *Intern::makeForm(const std::string& formName, const std::string& target) {
+    std::string formNames[] = {
+        "shrubbery creation",
+        "robotomy request",
+        "presidential pardon"
+    };
+    FormCreator creators[] = {
+        &Intern::createShrubbery,
+        &Intern::createRobotomy,
+        &Intern::createPresidential
+    };
+
+    for (int i = 0; i < 3; i++){
+        if (formNames[i] == formName){
+            std::cout << "Intern creates " << formName << std::endl;
+            return (this->*creators[i])(target);
+        }
     }
-    return form;
+    std::cout << "The form " << formName << " don't exist." << std::endl;
+    return NULL;
 }
 
-std::ostream &operator<<(std::ostream &os, const Intern &intern) {
-    (void)intern;
-    os << "Intern" << std::endl;
-    return os;
-}
+#pragma endregion

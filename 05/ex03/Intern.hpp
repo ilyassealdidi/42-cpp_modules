@@ -16,9 +16,12 @@ class Intern
         Intern &operator=(const Intern &other);
         ~Intern();
 
-        AForm *makeForm(std::string formName, std::string target);
+        AForm *createPresidential(const std::string& name);
+        AForm *createRobotomy(const std::string& name);
+        AForm *createShrubbery(const std::string& name);
+        AForm *makeForm(const std::string& formName, const std::string& target);
 };
 
-std::ostream &operator<<(std::ostream &os, const Intern &intern);
+typedef AForm* (Intern::*FormCreator)(const std::string&);
 
 #endif

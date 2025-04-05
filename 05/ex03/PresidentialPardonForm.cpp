@@ -1,6 +1,7 @@
 #include "PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm", 25, 5) {
+    this->target = "default";
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &other) : AForm(other), target(other.target) {
@@ -15,7 +16,6 @@ PresidentialPardonForm &PresidentialPardonForm::operator= (const PresidentialPar
 PresidentialPardonForm::PresidentialPardonForm(const std::string& target) : AForm("PresidentialPardonForm", 25, 5) {
     this->target = target;
 }
-
 
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const {
     if (this->getIsSigned() == false)

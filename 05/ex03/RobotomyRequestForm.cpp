@@ -14,10 +14,6 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &o
     return *this;
 }
 
-std::string RobotomyRequestForm::getTarget () const {
-    return this->target;   
-}
-
 RobotomyRequestForm::RobotomyRequestForm (const std::string& target) : AForm("RobotomyRequestForm", 72, 45) {
     this->target = target;
 }

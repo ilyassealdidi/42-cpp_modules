@@ -2,10 +2,9 @@
 #define BUREAUCRAT_HPP
 
 #include <string>
-#include "Form.hpp"
 #include "AForm.hpp"
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {

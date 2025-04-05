@@ -4,6 +4,7 @@
 
 PresidentialPardonForm::PresidentialPardonForm()
     : AForm("Presidential Pardon Form", 25, 5) {
+    this->target = "default";
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &other)

@@ -18,8 +18,6 @@ class RobotomyRequestForm : public AForm
         RobotomyRequestForm &operator=(const RobotomyRequestForm &other);
         ~RobotomyRequestForm();
 
-        std::string getTarget() const;
-
         void execute(Bureaucrat const & executor) const;
 };
 

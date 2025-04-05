@@ -28,12 +28,6 @@ RobotomyRequestForm::~RobotomyRequestForm() {
 
 #pragma endregion
 
-#pragma region Getters
-
-std::string RobotomyRequestForm::getTarget () const {
-    return this->target;   
-}
-
 #pragma endregion
 
 #pragma region Member Functions

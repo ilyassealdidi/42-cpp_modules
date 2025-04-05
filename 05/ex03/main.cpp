@@ -6,6 +6,7 @@ int main() {
     {
         Intern intern;
         Bureaucrat bureaucrat("John", 1);
+
         AForm *form1 = intern.makeForm("robotomy request", "Bender");
         AForm *form2 = intern.makeForm("presidential pardon", "Fry");
         AForm *form3 = intern.makeForm("shrubbery creation", "Leela");

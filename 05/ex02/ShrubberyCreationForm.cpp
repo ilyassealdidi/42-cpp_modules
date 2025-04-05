@@ -28,14 +28,6 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {
 
 #pragma endregion
 
-#pragma region Getters
-
-std::string ShrubberyCreationForm::getTarget() const {
-    return this->target;   
-}
-
-#pragma endregion
-
 #pragma region Exceptions
 
 const char *ShrubberyCreationForm::FileNotOpenedException::what() const throw() {

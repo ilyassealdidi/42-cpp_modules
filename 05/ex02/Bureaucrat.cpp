@@ -98,7 +98,7 @@ const char *Bureaucrat::GradeTooLowException::what () const throw() {
 
 #pragma endregion
 
-#pragma region Operators
+#pragma region Overloaded Operators
 
 std::ostream& operator<<(std::ostream &os, const Bureaucrat &bureaucrat) {
     os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
