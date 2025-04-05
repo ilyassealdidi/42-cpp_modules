@@ -48,17 +48,17 @@ void ShrubberyCreationForm::execute(Bureaucrat const & bureaucrat) const {
     if (outfile.is_open() == false)
         throw ShrubberyCreationForm::FileNotOpenedException();
 
-    std::cout << "        *        " << std::endl;
-    std::cout << "       ***       " << std::endl;
-    std::cout << "      *****      " << std::endl;
-    std::cout << "     *******     " << std::endl;
-    std::cout << "    *********    " << std::endl;
-    std::cout << "   ***********   " << std::endl;
-    std::cout << "  *************  " << std::endl;
-    std::cout << " *************** " << std::endl;
-    std::cout << "        |        " << std::endl;
-    std::cout << "        |        " << std::endl;
-    std::cout << "     -------     " << std::endl;
+    outfile << "        *        " << std::endl;
+    outfile << "       ***       " << std::endl;
+    outfile << "      *****      " << std::endl;
+    outfile << "     *******     " << std::endl;
+    outfile << "    *********    " << std::endl;
+    outfile << "   ***********   " << std::endl;
+    outfile << "  *************  " << std::endl;
+    outfile << " *************** " << std::endl;
+    outfile << "        |        " << std::endl;
+    outfile << "        |        " << std::endl;
+    outfile << "     -------     " << std::endl;
 
 }
 

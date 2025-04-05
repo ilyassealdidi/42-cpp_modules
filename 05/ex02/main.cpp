@@ -11,16 +11,14 @@ int main() {
         PresidentialPardonForm presidentialPardon("Presidential Pardon");
         RobotomyRequestForm robotomyRequest("Robotomy Request");
 
-        std::cout << "==============================================================" << std::endl;
         bureaucrat.signForm(shrubberyCreation);
         bureaucrat.executeForm(shrubberyCreation);
-        std::cout << "==============================================================" << std::endl;
+        std::cout << "****" << std::endl;
         bureaucrat.signForm(presidentialPardon);
         bureaucrat.executeForm(presidentialPardon);
-        std::cout << "==============================================================" << std::endl;
+        std::cout << "****" << std::endl;
         bureaucrat.signForm(robotomyRequest);
         bureaucrat.executeForm(robotomyRequest);
-        std::cout << "==============================================================" << std::endl; 
     }
     catch (std::exception & e)
     {

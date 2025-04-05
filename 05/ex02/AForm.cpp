@@ -31,9 +31,11 @@ AForm &AForm::operator=(const AForm &other) {
 
 AForm::~AForm() {
 }
+
 #pragma endregion
 
 #pragma region Getters
+
 std::string AForm::getName() const {
     return (this->name);
 }
@@ -49,18 +51,22 @@ int AForm::getGradeToExecute() const {
 int AForm::getGradeTosign() const {
     return (this->gradeToSign);   
 }
+
 #pragma endregion
 
 #pragma region Member Functions
+
 void AForm::beSigned(Bureaucrat &b) {
     if (b.getGrade() > this->gradeToSign)
         throw AForm::GradeTooLowException();
     else
         isSigned = true;
 }
+
 #pragma endregion
 
 #pragma region Exceptions
+
 const char *AForm::GradeTooHighException::what() const throw() {
     return ("Grade is too high!");
 }
@@ -72,13 +78,16 @@ const char *AForm::GradeTooLowException::what() const throw() {
 const char *AForm::FormNotSignedException::what() const throw() {
     return ("Form is not signed!");
 }
+
 #pragma endregion
 
 #pragma region Overloaded Operators
-std::ostream &operator<<(std::ostream &os, const Form &form) {
+
+std::ostream &operator<<(std::ostream &os, const AForm &form) {
     os << "Form " << form.getName() << " (" << (!form.getIsSigned() ? "not " : "") << "signed)" << std::endl;
     os << "Grade required to sign: " << form.getGradeTosign() << std::endl;
     os  << "Grade required to execute: " << form.getGradeToExecute() << std::endl;
     return os;
 }
+
 #pragma endregion
