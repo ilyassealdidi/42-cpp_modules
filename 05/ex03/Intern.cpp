@@ -54,8 +54,14 @@ AForm *Intern::makeForm(const std::string& formName, const std::string& target) 
             return (this->*creators[i])(target);
         }
     }
-    std::cout << "The form " << formName << " don't exist." << std::endl;
     return NULL;
 }
 
+#pragma endregion
+
+#pragma region Exceptions
+const char *Intern::FormNotFoundException::what() const throw()
+{
+    return "Error: Form doesn't exist";
+}
 #pragma endregion
