@@ -8,18 +8,15 @@
 int main()
 {
 	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	const Animal* dog = new Dog();
+	const Animal* cat = new Cat();
 
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-
-	i->makeSound();
-	j->makeSound();
+	cat->makeSound();
+	dog->makeSound();
 	meta->makeSound();
 
 	delete meta;
-	delete j;
-	delete i;
+	delete cat;
+	delete dog;
 	return 0;
 }

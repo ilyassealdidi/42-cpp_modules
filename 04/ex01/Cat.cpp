@@ -38,7 +38,8 @@ void Cat::setType(std::string type)
 Cat::Cat(const Cat &obj) : Animal(obj)
 {
     std::cout << "Cat copy constructor called" << std::endl;
-    *this = obj;
+	this->brain = new Brain(*obj.brain);
+    this->type = obj.type;
 }
 
 Cat &Cat::operator=(const Cat &obj)
