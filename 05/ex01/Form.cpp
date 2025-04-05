@@ -3,6 +3,7 @@
 #include <iostream>
 
 #pragma region Constructors and Destructor
+
 Form::Form() : name("default"), isSigned(false), gradeToSign(0), gradeToExecute(0) {
 }
 
@@ -27,6 +28,7 @@ Form::~Form() {
 #pragma endregion
 
 #pragma region Getters
+
 std::string Form::getName() const {
     return this->name;
 }
@@ -42,17 +44,21 @@ int Form::getGradeToExecute() const {
 int Form::getGradeTosign() const {
     return this->gradeToSign;   
 }
+
 #pragma endregion
 
 #pragma region Setters
+
 void Form::beSigned(Bureaucrat &b) {
     if (b.getGrade() > this->gradeToSign)
         throw Form::GradeTooLowException();
     this->isSigned = true;
 }
+
 #pragma endregion
 
 #pragma region Exceptions
+
 const char *Form::GradeTooHighException::what() const throw() {
     return "Form grade is too high!";
 }
@@ -60,13 +66,16 @@ const char *Form::GradeTooHighException::what() const throw() {
 const char *Form::GradeTooLowException::what() const throw() {
     return "Form grade is too low!";
 }
+
 #pragma endregion
 
 #pragma region Overloaded Operators
+
 std::ostream &operator<<(std::ostream &os, const Form &form) {
     os << "Form " << form.getName() << " (" << (!form.getIsSigned() ? "not " : "") << "signed)" << std::endl;
     os << "Grade required to sign: " << form.getGradeTosign() << std::endl;
     os  << "Grade required to execute: " << form.getGradeToExecute() << std::endl;
     return os;
 }
+
 #pragma endregion

@@ -2,6 +2,8 @@
 #include "Form.hpp"
 #include <iostream>
 
+#pragma region Constructors and Destructor
+
 Bureaucrat::Bureaucrat() : name("bureaucrat"), grade(150) {
 }
 
@@ -28,6 +30,10 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat &src) {
 Bureaucrat::~Bureaucrat() {
 }
 
+#pragma endregion
+
+#pragma region Getters
+
 std::string Bureaucrat::getName() const {
     return name;
 }
@@ -35,6 +41,10 @@ std::string Bureaucrat::getName() const {
 int Bureaucrat::getGrade() const {
     return grade;
 }
+
+#pragma endregion
+
+#pragma region Member Functions
 
 void Bureaucrat::signForm(Form &form) {
     try {
@@ -59,6 +69,10 @@ void Bureaucrat::decrementGrade() {
     grade++;
 }
 
+#pragma endregion
+
+#pragma region Exceptions
+
 const char *Bureaucrat::GradeTooHighException::what () const throw() {
     return ("Bureaucrat grade is too high!");
 }
@@ -67,7 +81,13 @@ const char *Bureaucrat::GradeTooLowException::what () const throw() {
     return "Bureaucrat grade is too low!";
 }
 
+#pragma endregion
+
+#pragma region Overloaded Operators
+
 std::ostream& operator<<(std::ostream &os, const Bureaucrat &bureaucrat) {
     os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
     return os;
 }
+
+#pragma endregion

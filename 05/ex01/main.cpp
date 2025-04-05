@@ -8,8 +8,9 @@ int main() {
 
         bureaucrat.signForm(form);
         std::cout << bureaucrat << std::endl;
-    } catch(std::exception& ex) {
-        std::cout << ex.what() << std::endl;
+        std::cout << form << std::endl;
+    } catch(std::exception& e) {
+        std::cout << e.what() << std::endl;
     }
     return 0;
 }
