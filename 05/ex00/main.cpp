@@ -7,7 +7,7 @@ int main() {
         bureaucrat.incrementGrade();
         std::cout << bureaucrat << std::endl;
     } catch (const std::exception &e) {
-        std::cerr << "Exception: " << e.what() << std::endl;
+        std::cerr << e.what() << std::endl;
     }
     return 0;
 }
