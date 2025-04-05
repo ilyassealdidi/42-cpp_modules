@@ -31,6 +31,8 @@ const char *ShrubberyCreationForm::FileNotOpenedException::what() const throw() 
 }
 
 void ShrubberyCreationForm::execute(Bureaucrat const & bureaucrat) const {
+	if (this->getIsSigned() == false)
+		throw AForm::FormNotSignedException();
     if (bureaucrat.getGrade() > this->getGradeToExecute())
         throw ShrubberyCreationForm::GradeTooLowException();
     std::ofstream outfile ((this->target + "_shrubbery").c_str());
