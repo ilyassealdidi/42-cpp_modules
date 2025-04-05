@@ -10,13 +10,13 @@
 
 class Intern
 {
-	public:
-		Intern();
-		Intern(const Intern &other);
-		Intern &operator=(const Intern &other);
-		~Intern();
+    public:
+        Intern();
+        Intern(const Intern &other);
+        Intern &operator=(const Intern &other);
+        ~Intern();
 
-		AForm *makeForm(std::string formName, std::string target);
+        AForm *makeForm(std::string formName, std::string target);
 };
 
 std::ostream &operator<<(std::ostream &os, const Intern &intern);

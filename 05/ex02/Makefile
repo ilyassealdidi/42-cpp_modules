@@ -1,31 +1,31 @@
 NAME = bureaucrat
 SRCS = main.cpp
-	Bureaucrat.cpp \
-	AForm.cpp \
-	ShrubberyCreationForm.cpp \
-	RobotomyRequestForm.cpp \
-	PresidentialPardonForm.cpp
+    Bureaucrat.cpp \
+    AForm.cpp \
+    ShrubberyCreationForm.cpp \
+    RobotomyRequestForm.cpp \
+    PresidentialPardonForm.cpp
 INCS = Bureaucrat.hpp
-	AForm.hpp \
-	ShrubberyCreationForm.hpp \
-	RobotomyRequestForm.hpp \
-	PresidentialPardonForm.hpp
+    AForm.hpp \
+    ShrubberyCreationForm.hpp \
+    RobotomyRequestForm.hpp \
+    PresidentialPardonForm.hpp
 OBJS = $(SRCS:.cpp=.o)
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	c++ $(FLAGS) $(OBJS) -o $(NAME)
+    c++ $(FLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.cpp $(INCS)
-	c++ $(FLAGS) -c $< -o $@
+    c++ $(FLAGS) -c $< -o $@
 
 clean:
-	$(RM) $(OBJS)
+    $(RM) $(OBJS)
 
 fclean: clean
-	$(RM) $(NAME)
+    $(RM) $(NAME)
 
 re: fclean all
 

@@ -1,6 +1,9 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137) {
+#pragma region Constructors and Destructor
+
+ShrubberyCreationForm::ShrubberyCreationForm()
+    : AForm("ShrubberyCreationForm", 145, 137) {
     this->target = "default";
 }
 
@@ -9,7 +12,8 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other)
       target(other.target) {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm (const std::string& target) : AForm("ShrubberyCreationForm", 145, 137) {
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target)
+    : AForm("ShrubberyCreationForm", 145, 137) {
     this->target = target;
 }
 
@@ -22,17 +26,29 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 ShrubberyCreationForm::~ShrubberyCreationForm() {
 }
 
+#pragma endregion
+
+#pragma region Getters
+
 std::string ShrubberyCreationForm::getTarget() const {
     return this->target;   
 }
+
+#pragma endregion
+
+#pragma region Exceptions
 
 const char *ShrubberyCreationForm::FileNotOpenedException::what() const throw() {
     return "File not opened";
 }
 
+#pragma endregion
+
+#pragma region Member Functions
+
 void ShrubberyCreationForm::execute(Bureaucrat const & bureaucrat) const {
-	if (this->getIsSigned() == false)
-		throw AForm::FormNotSignedException();
+    if (this->getIsSigned() == false)
+        throw AForm::FormNotSignedException();
     if (bureaucrat.getGrade() > this->getGradeToExecute())
         throw ShrubberyCreationForm::GradeTooLowException();
     std::ofstream outfile ((this->target + "_shrubbery").c_str());
@@ -54,3 +70,4 @@ void ShrubberyCreationForm::execute(Bureaucrat const & bureaucrat) const {
 
 }
 
+#pragma endregion

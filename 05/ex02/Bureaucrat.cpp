@@ -2,20 +2,28 @@
 #include "Form.hpp"
 #include <iostream>
 
-Bureaucrat::Bureaucrat() : name("bureaucrat"), grade(150) {
+#pragma region Constructors and Destructor
+
+Bureaucrat::Bureaucrat()
+    : name("bureaucrat"),
+      grade(150) {
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &src) : name(src.name), grade(src.grade) {
+Bureaucrat::Bureaucrat(const Bureaucrat &src)
+    : name(src.name),
+      grade(src.grade) {
 }
 
-Bureaucrat::Bureaucrat(const std::string &name, int grade) : name(name), grade(grade) {
-	if (grade < 1) {
-		throw GradeTooHighException();
-	}
-	if (grade > 150) {
-		throw GradeTooLowException();
-	}
-	this->grade = grade;
+Bureaucrat::Bureaucrat(const std::string &name, int grade)
+    : name(name),
+      grade(grade) {
+    if (grade < 1) {
+        throw GradeTooHighException();
+    }
+    if (grade > 150) {
+        throw GradeTooLowException();
+    }
+    this->grade = grade;
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &src) {
@@ -28,6 +36,10 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat &src) {
 Bureaucrat::~Bureaucrat() {
 }
 
+#pragma endregion
+
+#pragma region Getters
+
 std::string Bureaucrat::getName() const {
     return name;
 }
@@ -35,6 +47,10 @@ std::string Bureaucrat::getName() const {
 int Bureaucrat::getGrade() const {
     return grade;
 }
+
+#pragma endregion
+
+#pragma region Member Functions
 
 void Bureaucrat::signForm(AForm &form) {
     try {
@@ -68,6 +84,10 @@ void Bureaucrat::decrementGrade() {
     grade++;
 }
 
+#pragma endregion
+
+#pragma region Exceptions
+
 const char *Bureaucrat::GradeTooHighException::what () const throw() {
     return ("Bureaucrat grade is too high!");
 }
@@ -76,7 +96,13 @@ const char *Bureaucrat::GradeTooLowException::what () const throw() {
     return "Bureaucrat grade is too low!";
 }
 
+#pragma endregion
+
+#pragma region Operators
+
 std::ostream& operator<<(std::ostream &os, const Bureaucrat &bureaucrat) {
     os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
     return os;
 }
+
+#pragma endregion

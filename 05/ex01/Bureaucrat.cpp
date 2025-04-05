@@ -9,13 +9,13 @@ Bureaucrat::Bureaucrat(const Bureaucrat &src) : name(src.name), grade(src.grade)
 }
 
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : name(name), grade(grade) {
-	if (grade < 1) {
-		throw GradeTooHighException();
-	}
-	if (grade > 150) {
-		throw GradeTooLowException();
-	}
-	this->grade = grade;
+    if (grade < 1) {
+        throw GradeTooHighException();
+    }
+    if (grade > 150) {
+        throw GradeTooLowException();
+    }
+    this->grade = grade;
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &src) {

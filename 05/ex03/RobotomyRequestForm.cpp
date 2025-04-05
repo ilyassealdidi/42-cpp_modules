@@ -23,8 +23,8 @@ RobotomyRequestForm::RobotomyRequestForm (const std::string& target) : AForm("Ro
 }
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const {
-	if (this->getIsSigned() == false)
-		throw AForm::FormNotSignedException();
+    if (this->getIsSigned() == false)
+        throw AForm::FormNotSignedException();
     if (executor.getGrade() > this->getGradeToExecute())
         throw AForm::FormNotSignedException();
     std::cout << "BZZZZZZ... drilling noises..." << std::endl;

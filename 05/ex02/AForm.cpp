@@ -1,7 +1,9 @@
 #include "AForm.hpp"
 
 #pragma region Constructors and destructor
-AForm::AForm() : gradeToSign (0) , gradeToExecute(0) {
+
+AForm::AForm()
+    : gradeToSign (0) , gradeToExecute(0) {
 }
 
 AForm::AForm (const std::string &name, int gradeToSign, int gradeToExecute)
