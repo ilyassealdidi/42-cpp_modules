@@ -18,8 +18,10 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target)
 }
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other) {
-    this->target = other.target;
-    AForm::operator=(other);
+    if (this != &other) {
+        AForm::operator=(other);
+        this->target = other.target;
+    }
     return *this;
 }
 
