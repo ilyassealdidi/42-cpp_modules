@@ -28,6 +28,6 @@ class Intern
         };
 };
 
-typedef AForm* (Intern::*FormCreator)(const std::string&);
+typedef AForm*(Intern::*FormCreator)(const std::string&);
 
 #endif

@@ -18,8 +18,10 @@ RobotomyRequestForm::RobotomyRequestForm(const std::string& target)
 }
 
 RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &other) {
-    this->target = other.target;
-    AForm::operator=(other); // Why?
+    if (this != &other) {
+        AForm::operator=(other);
+        this->target = other.target;
+    }
     return *this;
 }
 

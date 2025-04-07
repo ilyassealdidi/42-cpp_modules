@@ -18,7 +18,9 @@ Form::Form(const std::string &name, int gradeToSign, int gradeToExecute) : name(
 }
 
 Form &Form::operator=(const Form &other) {
-    new (this) Form(other);
+    if (this != &other) {
+        this->isSigned = other.isSigned;
+    }   
     return *this;
 }
 
@@ -60,11 +62,11 @@ void Form::beSigned(Bureaucrat &b) {
 #pragma region Exceptions
 
 const char *Form::GradeTooHighException::what() const throw() {
-    return "Form grade is too high!";
+    return "Grade is too high!";
 }
 
 const char *Form::GradeTooLowException::what() const throw() {
-    return "Form grade is too low!";
+    return "Grade is too low!";
 }
 
 #pragma endregion

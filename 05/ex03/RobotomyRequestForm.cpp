@@ -9,12 +9,14 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other) : AFo
 }
 
 RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &other) {
-  this->target = other.target;
-    AForm::operator=(other);
+    if (this != &other) {
+        AForm::operator=(other);
+        this->target = other.target;
+    }
     return *this;
 }
 
-RobotomyRequestForm::RobotomyRequestForm (const std::string& target) : AForm("RobotomyRequestForm", 72, 45) {
+RobotomyRequestForm::RobotomyRequestForm(const std::string& target) : AForm("RobotomyRequestForm", 72, 45) {
     this->target = target;
 }
 
