@@ -22,7 +22,7 @@ ScalarConverter::~ScalarConverter() {
 #pragma region Member Functions
 
 void ScalarConverter::convert(std::string input) {
-
+    
 }
 
 #pragma endregion
