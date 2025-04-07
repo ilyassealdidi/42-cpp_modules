@@ -62,6 +62,6 @@ AForm *Intern::makeForm(const std::string& formName, const std::string& target) 
 #pragma region Exceptions
 const char *Intern::FormNotFoundException::what() const throw()
 {
-    return "Error: Form doesn't exist";
+    return "Form doesn't exist";
 }
 #pragma endregion
