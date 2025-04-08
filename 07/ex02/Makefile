@@ -1,6 +1,6 @@
 NAME = main
 SRCS = main.cpp
-INCS = iter.hpp
+INCS = Array.hpp
 OBJS = $(SRCS:.cpp=.o)
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
