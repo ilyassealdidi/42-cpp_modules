@@ -1,6 +1,6 @@
 NAME = easyfind
 SRCS = main.cpp
-INCS = Array.hpp
+INCS = easyfind.hpp
 OBJS = $(SRCS:.cpp=.o)
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
