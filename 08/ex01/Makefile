@@ -1,6 +1,6 @@
-NAME = easyfind
-SRCS = main.cpp
-INCS = Array.hpp
+NAME = span
+SRCS = main.cpp Span.cpp
+INCS = Span.hpp
 OBJS = $(SRCS:.cpp=.o)
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
