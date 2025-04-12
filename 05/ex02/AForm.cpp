@@ -62,8 +62,7 @@ int AForm::getGradeTosign() const {
 void AForm::beSigned(Bureaucrat &b) {
     if (b.getGrade() > this->gradeToSign)
         throw AForm::GradeTooLowException();
-    else
-        isSigned = true;
+    isSigned = true;
 }
 
 #pragma endregion

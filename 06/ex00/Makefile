@@ -6,14 +6,14 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	c++ $(FLAGS) $(OBJ) -o $(NAME)
+$(NAME): $(OBJS)
+	c++ $(FLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.cpp $(INCS) 
 	c++ $(FLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJS)
 
 fclean: clean
 	rm -f $(NAME)

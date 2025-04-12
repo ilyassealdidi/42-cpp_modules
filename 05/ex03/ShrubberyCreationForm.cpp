@@ -49,6 +49,5 @@ void ShrubberyCreationForm::execute(Bureaucrat const & bureaucrat) const {
     std::cout << "        |        " << std::endl;
     std::cout << "        |        " << std::endl;
     std::cout << "     -------     " << std::endl;
-
 }
 

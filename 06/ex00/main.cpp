@@ -1,14 +1,14 @@
 #include "ScalarConverter.hpp"
 
-int main(int argc, std::string argv[])
+int main(int argc, char **argv)
 {
     if (argc != 2)
     {
-        std::cerr << "Error: Invalid number of arguments." << std::endl;
-        std::cout << "Usage: " << argv[0] << " <literal>" << std::endl;
+        std::cerr << "Invalid Input!" << std::endl;
+        std::cerr << "Usage: " << argv[0] << " [value]" << std::endl;
         return 1;
     }
-
-    ScalarConverter::convert(argv[1]);
+    std::string input = argv[1];
+    ScalarConverter::convert(input);
     return 0;
 }
