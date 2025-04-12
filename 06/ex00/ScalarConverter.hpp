@@ -1,9 +1,12 @@
 #ifndef ScalarConverter_HPP
 # define ScalarConverter_HPP
 
-# include <iostream>
+#include <iostream>
 #include <sstream>
-#include <iomanip> 
+#include <iomanip>
+#include <cstdlib>
+#include <limits>
+#include <cmath>
 
 class ScalarConverter
 {
