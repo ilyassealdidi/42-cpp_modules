@@ -6,7 +6,7 @@
 Bureaucrat::Bureaucrat() : name("bureaucrat"), grade(150) {
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &src) : name(src.name), grade(src.grade) {
+Bureaucrat::Bureaucrat(const Bureaucrat &other) : name(other.name), grade(other.grade) {
 }
 
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : name(name), grade(grade) {
@@ -19,9 +19,9 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade) : name(name), grade(g
     this->grade = grade;
 }
 
-Bureaucrat& Bureaucrat::operator=(const Bureaucrat &src) {
-    if (this != &src) {
-        this->grade = src.grade;
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat &other) {
+    if (this != &other) {
+        this->grade = other.grade;
     }
     return *this;
 }
@@ -65,12 +65,12 @@ void Bureaucrat::decrementGrade() {
 
 const char *Bureaucrat::GradeTooHighException::what () const throw()
 {
-    return ("Bureaucrat grade is too high!");
+    return ("Grade is too high!");
 }
 
 const char *Bureaucrat::GradeTooLowException::what () const throw()
 {
-    return "Bureaucrat grade is too low!";
+    return "Grade is too low!";
 }
 
 #pragma endregion
@@ -78,7 +78,7 @@ const char *Bureaucrat::GradeTooLowException::what () const throw()
 #pragma region Overloaded Operators
 
 std::ostream& operator<<(std::ostream &os, const Bureaucrat &bureaucrat) {
-    os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
+    os << "Bureaucrat " << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
     return os;
 }
 

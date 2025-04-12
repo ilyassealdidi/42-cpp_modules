@@ -3,7 +3,8 @@
 #pragma region Constructors and destructor
 
 AForm::AForm()
-    : gradeToSign (0) , gradeToExecute(0) {
+    : gradeToSign (0)
+    , gradeToExecute(0) {
 }
 
 AForm::AForm (const std::string &name, int gradeToSign, int gradeToExecute)
@@ -25,7 +26,9 @@ AForm::AForm(const AForm &other)
 }
 
 AForm &AForm::operator=(const AForm &other) {
-    this->name = other.name;
+    if (this != &other) {
+        this->isSigned = other.isSigned;
+    }
     return (*this);
 }
 
