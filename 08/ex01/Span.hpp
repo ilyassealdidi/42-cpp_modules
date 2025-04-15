@@ -1,5 +1,5 @@
-#ifndef APAN_HPP
-#define APAN_HPP
+#ifndef SPAN_HPP
+#define SPAN_HPP
 
 #include <vector>
 #include <algorithm>
@@ -25,18 +25,14 @@ class Span
         size_t longestSpan() const;
 
         void    addNumber(int nbr);
-        void    addSpan(std::vector<int> vec);
 
-        class   OutOfSize : public std::exception{
-            virtual const char *what() const throw(){
-                return ("The Span is full.");
+        template <typename Iterator>
+        void addNumber(Iterator begin, Iterator end) {
+            if (list.size() + std::distance(begin, end) > N) {
+                throw std::out_of_range("Not enough space in Span to add all numbers");
             }
-        };
-        class   SpanExeption : public std::exception{
-            virtual const char *what() const throw(){
-                return ("Not enough numbers to find a span.");
-            }
-        };
+            list.insert(begin, end);
+        }
 };
 
 #endif
