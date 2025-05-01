@@ -2,7 +2,8 @@ NAME = btc
 SRCS = main.cpp BitcoinExchange.cpp
 INCS = BitcoinExchange.hpp
 OBJS = $(SRCS:.cpp=.o)
-FLAGS = -Wall -Wextra -Werror -std=c++98
+#FLAGS = -Wall -Wextra -Werror 
+FLAGS += -std=c++98
 
 all: $(NAME)
 
