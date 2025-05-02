@@ -5,7 +5,6 @@ BitcoinExchange::BitcoinExchange() {
     if (!file.is_open()) {
         throw std::runtime_error("Error: could not open data.csv");
     }
-    PriceMap data;
     std::string date;
     std::string price;
     std::string line;
@@ -16,13 +15,13 @@ BitcoinExchange::BitcoinExchange() {
         if (pos != std::string::npos) {
             date = line.substr(0, pos);
             price = line.substr(pos + 1);
-            data[date] = price;
+            historicalData[date] = price;
         }
     }
     file.close();
-    // if (historicalData.empty()) {
-    //     throw std::runtime_error("Error: the `data.csv` file is empty");
-    // }
+    if (historicalData.empty()) {
+        throw std::runtime_error("Error: the `data.csv` file is empty");
+    }
 }
 
 BitcoinExchange::BitcoinExchange(const BitcoinExchange& obj) {
@@ -40,7 +39,7 @@ BitcoinExchange::~BitcoinExchange() {
 }
 
 void BitcoinExchange::getHitoricalPrices(std::string &filename) {
-    std::ifstream file(filename);
+    std::ifstream file(filename.c_str());
     if (!file.is_open()) {
         throw std::runtime_error("Error: could not open " + filename);
     }
@@ -58,9 +57,8 @@ void BitcoinExchange::getHitoricalPrices(std::string &filename) {
             }
 
             date = line.substr(0, pos - 1);
-            if (!isDate(date)
-            || line.find_first_not_of("0123456789.-", pos + 1) != std::string::npos
-            || !isNumeric(line.substr(pos + 1))) {
+            if (!isValidDate(date)
+            || !isNumeric(line.substr(pos + 2))) {
                 throw std::runtime_error("Error: bad input => " + line);
             }
 
@@ -70,7 +68,7 @@ void BitcoinExchange::getHitoricalPrices(std::string &filename) {
             } else if (price > 1000) {
                 throw std::runtime_error("Error: too large a number");
             } else {
-
+                calculatePrice(date, price);
             }
 
         } catch (const std::exception& e) {
@@ -94,30 +92,34 @@ bool BitcoinExchange::isFutureDate(const std::string& date) const {
 }
 
 bool BitcoinExchange::isNumeric(const std::string& str) const {
-    char *ptr;
-    double value = strtod(str.c_str(), &ptr);
-	if (*ptr) {
-        return false;
-	}
-    return true;
-}
-
-bool BitcoinExchange::isDate(const std::string& date) const {
-    if (date.length() < 14 || date[4] != '-' || date[7] != '-') {
+    if (str.find_first_not_of("0123456789.-") != std::string::npos) {
         return false;
     }
-    
+    char *ptr;
+    double value = strtod(str.c_str(), &ptr);
+    return *ptr ? false : true;
+}
+
+bool BitcoinExchange::isValidDate(const std::string& date) const {
+    if (date.length() < 10)
+        return false;
+    if (date[4] != '-')
+        return false;
+    if (date[7] != '-') {
+        return false;
+    }
+
     std::string yearStr  = date.substr(0, 4);
     std::string monthStr = date.substr(5, 2);
     std::string dayStr   = date.substr(8, 2);
-    
+
     for (size_t i = 0; i < 4; ++i) {
         if (!isdigit(yearStr[i])) return false;
     }
     for (size_t i = 0; i < 2; ++i) {
         if (!isdigit(monthStr[i]) || !isdigit(dayStr[i])) return false;
     }
-    
+
     int year  = atoi(yearStr.c_str());
     int month = atoi(monthStr.c_str());
     int day   = atoi(dayStr.c_str());
@@ -126,7 +128,7 @@ bool BitcoinExchange::isDate(const std::string& date) const {
     if (month < 1 || month > 12) return false;
     if (day < 1) return false;
 
-    if (isFutureDate(date)) {
+    if (isFutureDate(date) || date < historicalData.begin()->first) {
         return false;
     }
 
@@ -140,15 +142,10 @@ bool BitcoinExchange::isDate(const std::string& date) const {
     return day <= daysInMonth[month - 1];
 }
 
-std::string BitcoinExchange::getClosestDate(const std::string& date) const {
-	std::map<std::string, std::string>::const_iterator itr = historicalData.lower_bound(date);
-	// how to check the closest date?;
-}
-
 void BitcoinExchange::calculatePrice(const std::string& date, double amount) const {
 	PriceMap::const_iterator itr = historicalData.find(date);
 	if (itr == historicalData.end()) {
-        itr = historicalData.lower_bound(date);
+        itr = historicalData.lower_bound(date)--;
     }
     double	price = strtod((itr->second).c_str(), NULL);
 	std::cout << date << " => " << amount << " = " << price * amount << std::endl;

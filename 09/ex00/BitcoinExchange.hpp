@@ -16,9 +16,7 @@ class BitcoinExchange
 
         bool isFutureDate(const std::string& date) const;
         bool isNumeric(const std::string &str) const;
-        bool isDate(const std::string &str) const;
-
-        std::string getClosestDate(const std::string& date) const;
+        bool isValidDate(const std::string &str) const;
 
         void calculatePrice(const std::string& date, double amount) const;
     public:
@@ -28,8 +26,6 @@ class BitcoinExchange
         ~BitcoinExchange();
 
         void getHitoricalPrices(std::string &filename);
-        
-        void printData(); //! To be removed in the final version
 };
 
 #endif
