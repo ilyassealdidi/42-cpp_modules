@@ -2,6 +2,9 @@
 #define RPN_HPP
 
 #include <iostream>
+#include <stack>
+#include <cstdlib>
+#include <sstream>
 
 class RPN
 {
@@ -11,6 +14,7 @@ class RPN
         RPN& operator=(const RPN& obj);
         ~RPN();
 
+        static int calculate(const std::string& expression);
 };
 
 #endif
