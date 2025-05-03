@@ -25,7 +25,7 @@ class BitcoinExchange
         BitcoinExchange& operator=(const BitcoinExchange& obj);
         ~BitcoinExchange();
 
-        void getHitoricalPrices(std::string &filename);
+        void displayHistoricalPrices(std::string &filename);
 };
 
 #endif

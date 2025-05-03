@@ -9,7 +9,7 @@ int main(int ac, char **argv) {
         }
         BitcoinExchange btc;
         std::string filename = argv[1];
-        btc.getHitoricalPrices(filename);
+        btc.displayHistoricalPrices(filename);
     } catch (const std::exception &e) {
         std::cerr << e.what() << std::endl;
     }
