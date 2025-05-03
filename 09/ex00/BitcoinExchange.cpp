@@ -38,7 +38,7 @@ BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& obj) {
 BitcoinExchange::~BitcoinExchange() {
 }
 
-void BitcoinExchange::getHitoricalPrices(std::string &filename) {
+void BitcoinExchange::displayHistoricalPrices(std::string &filename) {
     std::ifstream file(filename.c_str());
     if (!file.is_open()) {
         throw std::runtime_error("Error: could not open " + filename);

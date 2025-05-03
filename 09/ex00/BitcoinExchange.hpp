@@ -3,9 +3,11 @@
 
 #include <iostream>
 #include <fstream>
-#include <stdlib.h> // Try to replace this with <cstdlib> if possible
+#include <stdlib.h> // Check if there is any alternative
 #include <map>
 #include <ctime>
+
+#define USAGE_ERROR "Error: Invalid number of arguments\nUsage: ./bitcoin <filename>"
 
 typedef std::map<std::string, std::string> PriceMap;
 
@@ -25,7 +27,7 @@ class BitcoinExchange
         BitcoinExchange& operator=(const BitcoinExchange& obj);
         ~BitcoinExchange();
 
-        void getHitoricalPrices(std::string &filename);
+        void displayHistoricalPrices(std::string &filename);
 };
 
 #endif
